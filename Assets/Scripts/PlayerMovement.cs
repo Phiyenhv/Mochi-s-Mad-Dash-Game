@@ -7,13 +7,9 @@ public class PlayerMovement : MonoBehaviour
     public CharacterController2D controller;
     public Animator animator;
     public float runSpeed = 40f;
-
     float horizontalMove = 0f;
-
     bool jump = false;
-
     bool crouch = false;
-
  
     void Update()
     {
@@ -42,7 +38,10 @@ public class PlayerMovement : MonoBehaviour
     {
         animator.SetBool("IsJumping", false);
     }
-
+    public void OnCrouching(bool IsCrawl)
+    {
+        animator.SetBool("IsCrawl", IsCrawl);
+    }
 
     void FixedUpdate()
     {
